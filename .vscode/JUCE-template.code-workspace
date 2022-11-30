@@ -5,6 +5,8 @@
 		}
 	],
 	"settings": {
+		"editor.detectIndentation": true,
+		"files.trimTrailingWhitespace": true,
 		"files.exclude": {
 			"**/.git": true,
 			"**/.svn": true,
