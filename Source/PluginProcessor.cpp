@@ -79,15 +79,19 @@ int JUCEtemplateAudioProcessor::getCurrentProgram()
 
 void JUCEtemplateAudioProcessor::setCurrentProgram (int index)
 {
+    (void)index;
 }
 
 const juce::String JUCEtemplateAudioProcessor::getProgramName (int index)
 {
+    (void)index;
     return {};
 }
 
 void JUCEtemplateAudioProcessor::changeProgramName (int index, const juce::String& newName)
 {
+    (void)index;
+    (void)newName;
 }
 
 //==============================================================================
@@ -95,6 +99,8 @@ void JUCEtemplateAudioProcessor::prepareToPlay (double sampleRate, int samplesPe
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
+    (void)sampleRate;
+    (void)samplesPerBlock;
 }
 
 void JUCEtemplateAudioProcessor::releaseResources()
@@ -131,6 +137,7 @@ bool JUCEtemplateAudioProcessor::isBusesLayoutSupported (const BusesLayout& layo
 
 void JUCEtemplateAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
 {
+    (void)midiMessages;
     juce::ScopedNoDenormals noDenormals;
     auto totalNumInputChannels  = getTotalNumInputChannels();
     auto totalNumOutputChannels = getTotalNumOutputChannels();
@@ -152,7 +159,7 @@ void JUCEtemplateAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer,
     // interleaved by keeping the same state.
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
-        auto* channelData = buffer.getWritePointer (channel);
+        // auto* channelData = buffer.getWritePointer (channel);
 
         // ..do something to the data...
     }
@@ -175,12 +182,15 @@ void JUCEtemplateAudioProcessor::getStateInformation (juce::MemoryBlock& destDat
     // You should use this method to store your parameters in the memory block.
     // You could do that either as raw data, or use the XML or ValueTree classes
     // as intermediaries to make it easy to save and load complex data.
+    (void)destData;
 }
 
 void JUCEtemplateAudioProcessor::setStateInformation (const void* data, int sizeInBytes)
 {
     // You should use this method to restore your parameters from this memory block,
     // whose contents will have been created by the getStateInformation() call.
+    (void)data;
+    (void)sizeInBytes;
 }
 
 //==============================================================================
